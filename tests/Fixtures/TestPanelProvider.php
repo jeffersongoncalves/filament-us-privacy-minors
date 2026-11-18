@@ -4,6 +4,7 @@ namespace JeffersonGoncalves\Filament\UsPrivacyMinors\Tests\Fixtures;
 
 use Filament\Panel;
 use Filament\PanelProvider;
+use JeffersonGoncalves\Filament\UsPrivacyMinors\UsPrivacyMinorsPlugin;
 
 class TestPanelProvider extends PanelProvider
 {
@@ -13,6 +14,9 @@ class TestPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login();
+            ->login()
+            ->plugins([
+                UsPrivacyMinorsPlugin::make(),
+            ]);
     }
 }
