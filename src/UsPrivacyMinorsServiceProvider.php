@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\UsPrivacyMinors;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class UsPrivacyMinorsServiceProvider extends PackageServiceProvider
+class UsPrivacyMinorsServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-us-privacy-minors';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-us-privacy-minors')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
